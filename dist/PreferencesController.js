@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PreferencesController = void 0;
 const base_controller_1 = require("@metamask/base-controller");
+const controller_utils_1 = require("@metamask/controller-utils");
 /**
  * Controller that stores shared settings and exposes convenience methods
  */
@@ -32,8 +33,7 @@ class PreferencesController extends base_controller_1.BaseController {
         this.initialize();
     }
     toChecksumHexAddress(address) {
-        // return toChecksumHexAddress(address);
-        return address;
+        return (0, controller_utils_1.toChecksumHexAddress)(address);
     }
     /**
      * Adds identities to state.
@@ -136,9 +136,7 @@ class PreferencesController extends base_controller_1.BaseController {
      * @param addresses - List of addresses to use as a basis for each identity.
      */
     updateIdentities(addresses) {
-        // addresses = addresses.map((address: string) =>
-        //   this.toChecksumHexAddress(address),
-        // );
+        addresses = addresses.map((address) => this.toChecksumHexAddress(address));
         const oldIdentities = this.state.identities;
         const identities = addresses.reduce((ids, address, index) => {
             ids[address] = oldIdentities[address] || {

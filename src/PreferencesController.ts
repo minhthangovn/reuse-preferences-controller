@@ -101,8 +101,7 @@ export class PreferencesController extends BaseController<
   }
 
   toChecksumHexAddress(address: string) {
-    // return toChecksumHexAddress(address);
-    return address;
+    return toChecksumHexAddress(address);
   }
   /**
    * Adds identities to state.
@@ -218,9 +217,9 @@ export class PreferencesController extends BaseController<
    * @param addresses - List of addresses to use as a basis for each identity.
    */
   updateIdentities(addresses: string[]) {
-    // addresses = addresses.map((address: string) =>
-    //   this.toChecksumHexAddress(address),
-    // );
+    addresses = addresses.map((address: string) =>
+      this.toChecksumHexAddress(address),
+    );
     const oldIdentities = this.state.identities;
     const identities = addresses.reduce(
       (ids: { [address: string]: ContactEntry }, address, index) => {
