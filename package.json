@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@metamask/base-controller": "^1.1.1",
-    "@metamask/controller-utils": "git+https://github.com/minhthangovn/reuse-controller-utils.git#v1.0.4"
+    "@metamask/controller-utils": "git+https://github.com/minhthangovn/reuse-controller-utils.git#main"
   },
   "devDependencies": {
     "@metamask/auto-changelog": "^3.1.0",
