@@ -203,6 +203,15 @@ class PreferencesController extends base_controller_1.BaseController {
         this.update({ selectedAddress: this.toChecksumHexAddress(selectedAddress) });
     }
     /**
+    * Gets selected address.
+    *
+    * @param selectedAddress - Ethereum address.
+    */
+    getSelectedAddress() {
+        const { selectedAddress } = this.state;
+        return selectedAddress;
+    }
+    /**
      * Sets new IPFS gateway.
      *
      * @param ipfsGateway - IPFS gateway string.

@@ -142,6 +142,12 @@ export declare class PreferencesController extends BaseController<BaseConfig, Pr
      */
     setSelectedAddress(selectedAddress: string): void;
     /**
+    * Gets selected address.
+    *
+    * @param selectedAddress - Ethereum address.
+    */
+    getSelectedAddress(): string;
+    /**
      * Sets new IPFS gateway.
      *
      * @param ipfsGateway - IPFS gateway string.
